@@ -7,7 +7,7 @@ where N is the size of the given array.
 */
 import java.util.Arrays;
 
-public class Solution {
+public class Solution{
 
 	public static int distinctLeft(int arr[], int n, int k) {
 

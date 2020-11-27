@@ -1,4 +1,9 @@
+/*
+    Time Complexity : O(N * M)
+    Space Complexity :  O(1)
 
+    where N and M are the lengths of the given two strings
+*/
 import java.util.HashSet;
 import java.util.TreeSet;
 
