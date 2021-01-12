@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Runner {
@@ -11,8 +12,8 @@ public class Runner {
 			for (int i = 0; i < n; i++) {
 				arr[i] = s.nextInt();
 			}
-			System.out.println(Solution.minJumps(arr));
+			long sol = Solution.minJumps(arr, n);
+			System.out.println(sol);
 		}
 	}
-
 }

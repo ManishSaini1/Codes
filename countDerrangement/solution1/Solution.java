@@ -2,9 +2,9 @@
 Time complexity: O(2^n)
 Space complexity: O(n)
 
-Where ‘n’ is the number of elements.
+Where n is the number of elements.
 */
-public class Solution1 {
+public class Solution {
 	static long MOD = 1000000007;
 
 	public static long countDerangements(long n) {

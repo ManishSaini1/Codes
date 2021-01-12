@@ -1,33 +1,30 @@
 /*
-Time Complexity: O(N*log(W))
-Space Complexity: O(N*log(W)),
+Time complexity: O(n)
+Space complexity: O(1)
 
-where N is the size of the array and W is the maximum of all elements present in the array.
+Where 'n' is the number of elements int the sequence.
 */
-import java.util.ArrayList;
-import java.util.HashSet;
+
 public class Solution {
 
-	
-	public static int countDistinctBitwiseOR(int[] arr, int n) {
-		ArrayList<Integer> res=new ArrayList<>();
-		HashSet<Integer> ans = new HashSet<>();
-		int left = 0, right;
-		for (int i = 0; i < arr.length; i++) {
-			right = res.size();
-			res.add(arr[i]);
-			for (int j = left; j < right; ++j) {
-				if (res.get(res.size() -1) != (res.get(j) | arr[i])) {
-					res.add(res.get(j) | arr[i]);
-				}
+	public static int minJumps(int[] arr) {
+		/*
+		 * The variable 'curEnd stores the last index reachable from the current index
+		 * 'curFarthest storest the farthest index reachable
+		 */
+		int minJump = 0, curEnd = 0, curFarthest = 0;
+		for (int i = 0; i < arr.length - 1; i++) {
+			// Update 'curFarthest'
+			curFarthest = Math.max(curFarthest, i + arr[i]);
+			if (i == curEnd) {
+				// Increment number of jumps if we reach the last reachable index
+				minJump++;
+				// Update the farthest index reachable
+				curEnd = curFarthest;
 			}
-			left = right;
 		}
+		return minJump;
 
-		for (int i = 0; i < res.size(); i++) {
-			ans.add(res.get(i));
-		}
-		return ans.size();
 	}
 
 }
